@@ -35,7 +35,7 @@ pipeline {
             steps {
                  script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-creds') {
-                        docker.image("vineeth0612/k8s-deploy.push()
+                        docker.image("vineeth0612/k8s-deploy").push()
                        
                     }
                 }
