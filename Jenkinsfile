@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "YOUR_DOCKERHUB_USERNAME/kubernetes-cicd-app"
+        DOCKER_IMAGE = "vineeth0612/k8s-deploy"
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
     }
 
