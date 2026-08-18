@@ -21,9 +21,9 @@ pipeline {
             }
         }
 
-        stage('Login Docker Hub') {
-            steps {
-               withCredentials([
+stage('Login Docker Hub') {
+    steps {
+        withCredentials([
             usernamePassword(
                 credentialsId: 'dockerhub-creds',
                 usernameVariable: 'DOCKER_USER',
@@ -31,11 +31,13 @@ pipeline {
             )
         ]) {
             sh '''
-                echo "$DOCKER_PASS" | docker login -u "$vineeth0612" --password-stdin
+                printf '%s' "$DOCKER_PASS" | docker login \
+                    --username "$DOCKER_USER" \
+                    --password-stdin
             '''
-                }
-            }
         }
+    }
+}
 
         stage('Push Docker Image') {
             steps {
