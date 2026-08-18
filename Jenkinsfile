@@ -43,7 +43,6 @@ pipeline {
                    sh 'docker push vineeth0612/k8s-deploy:${BUILD_NUMBER}'    
                     }
                 }
-            }
         }
 
         stage('Deploy to Kubernetes') {
