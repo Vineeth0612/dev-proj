@@ -4,14 +4,14 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "YOUR_DOCKERHUB_USERNAME/kubernetes-cicd-app"
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
     }
 
     stages {
-
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'YOUR_GITHUB_REPO_URL'
+                git branch: 'master',
+                    url: 'https://github.com/Vineeth0612/dev-proj.git'
             }
         }
 
@@ -23,23 +23,22 @@ pipeline {
 
         stage('Login Docker Hub') {
             steps {
-                withCredentials([
-                    usernamePassword(
-                        credentialsId: 'dockerhub-creds',
-                        usernameVariable: 'DOCKER_USER',
-                        passwordVariable: 'DOCKER_PASS'
-                    )
-                ]) {
-                    sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-creds') {
+                        echo 'Logged in to DockerHub'
+                    }
                 }
             }
         }
 
         stage('Push Docker Image') {
             steps {
-                sh 'docker push $DOCKER_IMAGE:$BUILD_NUMBER'
-                sh 'docker tag $DOCKER_IMAGE:$BUILD_NUMBER $DOCKER_IMAGE:latest'
-                sh 'docker push $DOCKER_IMAGE:latest'
+                 script {
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-creds') {
+                        docker.image("vineeth0612/k8s-deploy.push()
+                       
+                    }
+                }
             }
         }
 
