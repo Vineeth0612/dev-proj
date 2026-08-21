@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: vineeth0612/deployment:latest
+          image: vineeth0612/deployment:vk
 
           ports:
             - containerPort: 80
