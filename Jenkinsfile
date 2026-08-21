@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-               sh 'docker build -t vineeth0612/k8s-deploy:${BUILD_NUMBER} .'
+               sh 'docker build -t vineeth0612/deployment:latest:${BUILD_NUMBER} .'
             }
         }
 
@@ -42,7 +42,7 @@ stage('Login Docker Hub') {
         stage('Push Docker Image') {
             steps {
                  script {
-                   sh 'docker push vineeth0612/k8s-deploy:${BUILD_NUMBER}'    
+                   sh 'docker push vineeth0612/deployment:latest:${BUILD_NUMBER}'    
                     }
                 }
         }
