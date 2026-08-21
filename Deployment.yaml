@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: vineeth0612/k8s-deploy:nginx
+          image: vineeth0612/deployment:latest
 
           ports:
             - containerPort: 80
