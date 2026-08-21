@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-               sh 'docker build -t vineeth0612/deployment:latest:${BUILD_NUMBER} .'
+               sh 'docker build -t vineeth0612/deployment:vk${BUILD_NUMBER} .'
             }
         }
 
