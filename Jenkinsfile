@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "vineeth0612/k8s-deploy"
+        DOCKER_IMAGE = "vineeth0612/deployment:vk"
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
     }
 
