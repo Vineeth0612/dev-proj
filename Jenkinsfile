@@ -49,8 +49,8 @@ stage('Login Docker Hub') {
 
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'kubectl apply -f k8s/Deployment.yaml'
-                sh 'kubectl apply -f k8s/Service.yaml'
+                sh 'kubectl apply -f Deployment.yaml'
+                sh 'kubectl apply -f Service.yaml'
             }
         }
 
