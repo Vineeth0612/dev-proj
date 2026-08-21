@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: dev-proj
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: dev-proj
+
+  template:
+    metadata:
+      labels:
+        app: dev-proj
+
+    spec:
+      containers:
+        - name: frontend
+          image: vineeth0612/k8s-deploy:nginx
+
+          ports:
+            - containerPort: 80
