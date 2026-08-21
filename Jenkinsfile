@@ -42,7 +42,7 @@ stage('Login Docker Hub') {
         stage('Push Docker Image') {
             steps {
                  script {
-                   sh 'docker push vineeth0612/deployment:latest:${BUILD_NUMBER}'    
+                   sh 'docker push vineeth0612/deployment:vk${BUILD_NUMBER}'    
                     }
                 }
         }
