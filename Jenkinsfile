@@ -49,6 +49,7 @@ stage('Login Docker Hub') {
 
         stage('Deploy to Kubernetes') {
             steps {
+                sh 'pwd'
                 sh 'kubectl apply -f Deployment.yaml'
                 sh 'kubectl apply -f Service.yaml'
             }
