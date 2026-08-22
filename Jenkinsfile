@@ -50,6 +50,7 @@ stage('Login Docker Hub') {
         stage('Deploy to Kubernetes') {
             steps {
                 sh 'pwd'
+                sh 'export KUBECONFIG=/var/lib/jenkins/.kube/config'
                 sh 'kubectl apply -f Deployment.yaml'
                 sh 'kubectl apply -f Service.yaml'
             }
