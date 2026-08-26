@@ -1,10 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title> Devops Project </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps CI/CD Pipeline Project</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f7fc;
+            color:#333;
+        }
+
+        header{
+            background:#0d6efd;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+
+        header h1{
+            font-size:36px;
+        }
+
+        .container{
+            width:90%;
+            margin:auto;
+            padding:20px;
+        }
+
+        .card{
+            background:white;
+            margin:20px 0;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2{
+            color:#0d6efd;
+            margin-bottom:10px;
+        }
+
+        ul{
+            margin-left:20px;
+        }
+
+        .workflow{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:15px;
+            margin-top:20px;
+        }
+
+        .step{
+            background:#0d6efd;
+            color:white;
+            padding:15px;
+            border-radius:8px;
+            min-width:150px;
+            text-align:center;
+            font-weight:bold;
+        }
+
+        footer{
+            text-align:center;
+            background:#212529;
+            color:white;
+            padding:15px;
+            margin-top:20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello from Kubernetes!</h1>
-    <h2>CI/CD Pipeline Successful </h2>
+
+<header>
+    <h1>End-to-End Kubernetes CI/CD Pipeline</h1>
+    <p>Using GitHub, Jenkins, Docker & Kubernetes</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Project Overview</h2>
+        <p>
+            This project demonstrates an automated CI/CD pipeline where code is
+            pushed to GitHub, built through Jenkins, packaged using Docker,
+            stored in Docker Hub, and deployed automatically into Kubernetes.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Tools & Technologies</h2>
+        <ul>
+            <li>GitHub - Source Code Repository</li>
+            <li>Jenkins - Continuous Integration & Delivery</li>
+            <li>Docker - Containerization</li>
+            <li>Docker Hub - Image Registry</li>
+            <li>Kubernetes - Container Orchestration</li>
+            <li>Minikube - Local Kubernetes Cluster</li>
+            <li>AWS EC2 - Hosting Platform</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>CI/CD Workflow</h2>
+
+        <div class="workflow">
+            <div class="step">GitHub</div>
+            <div class="step">Jenkins</div>
+            <div class="step">Build</div>
+            <div class="step">Docker</div>
+            <div class="step">Docker Hub</div>
+            <div class="step">Kubernetes</div>
+            <div class="step">Deploy</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Project Outcome</h2>
+        <ul>
+            <li>Automated Build Process</li>
+            <li>Automated Docker Image Creation</li>
+            <li>Continuous Deployment to Kubernetes</li>
+            <li>Reduced Manual Intervention</li>
+            <li>Fast and Reliable Releases</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    <p>DevOps Project | GitHub • Jenkins • Docker • Kubernetes</p>
+</footer>
+
 </body>
 </html>
+
